@@ -1,0 +1,316 @@
+@import '../styles/style.scss';
+
+
+
+.block-excurtions { 
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.block-excurtions__flex-el {
+    min-height: 400px;
+    min-width: 50%;
+    box-sizing: border-box;
+    // flex-basis: 180px;
+    flex-grow: 1;
+    flex-basis: 400px;
+}
+
+.block-excurtions__flex-el_txt {
+    background: $color1;
+    padding: 20px;
+    
+    
+
+}
+
+// .block-excurtions__flex-el_foto {
+    
+// }
+
+.tajnySpb {
+    background: url(../images/spb_podval.jpg) center center /cover no-repeat;
+    
+}
+.petergof {
+    background: url(../images/petergoff.jpg) center center /cover no-repeat;
+    
+}
+
+.kryshiSpb {
+    background: url(../images/peterburg_roof.jpg) center center /cover no-repeat;
+    
+}
+
+.neformSpb {
+    background: url(../images/pub.jpg) center center / cover no-repeat;
+    
+}
+
+
+.teplohodPoSv {
+    background: url(../images/teplohod.jpg) center center / cover no-repeat;
+    
+}
+
+
+.SpbOutside {
+    background: url(../images/dvorci-kolodci.jpg) center center / cover no-repeat;
+
+}
+
+
+
+.excurtions__header {
+    font-size: 20px;
+    color: antiquewhite;
+    padding-bottom: 20px;
+}
+
+.excurtions__content {
+    color: antiquewhite;
+    padding-bottom: 12px;
+    line-height: 1.5;
+}
+
+.excurtions__price {
+    font-size: 18px;
+    color: antiquewhite;
+    font-weight: bold;
+    margin: 10px;
+
+}
+
+[type="radio"] {
+    display: none;
+}
+
+.radio {
+    // margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid $color5;
+    position: relative;
+    cursor: pointer;
+    
+
+}
+
+.radio:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background: $color3_2;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    transition: 0.2s all;
+}
+
+[type="radio"]:checked ~ .radio:before {
+
+    width: 16px;
+    height: 16px;
+    
+}
+
+.excurtions__button {
+    width: 160px;
+    font-size: 18px;
+    text-decoration: none;
+    color: antiquewhite;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 30px;
+    background-color: rgb(234, 160, 131);
+    border: 1px solid rgb(223, 247, 27);
+    border-radius: 5px;  
+}
+
+.excurtions__button_right {
+    width: 160px;
+    font-size: 18px;
+    text-decoration: none;
+    color: antiquewhite;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 30px;
+    background-color: rgb(234, 160, 131);
+    border: 1px solid rgb(223, 247, 27);
+    border-radius: 5px;  
+}
+
+// далее код для формы заказа экскурсий order_form.php
+
+.orderForm {
+    width: 100%;
+    min-height: 400px;
+    background: $color3_2;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.orderForm_el {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+    
+}
+.orderForm_el__foto {
+    width: 50%;
+    box-sizing: border-box;
+    
+}
+.orderForm__el__cont {
+    line-height: 1.5;
+    color: $color3;
+    font-size: 18px;
+}
+.orderForm_cont_span { 
+    line-height: 1.5;
+    color: $color2;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+// далее код формы ответа на письмо
+
+.mailout { 
+    min-height: 400px;
+    max-width: 800px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    padding: 20px;
+    
+}
+.convert_top {
+    height: 120px;
+    min-width: 400px;
+    background: $color3_2;
+    border-radius: 40px 40px 0 0 ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+       
+}
+
+.convert_top_ico {
+    height: 120px;
+    border-radius: 40px;
+    background: $color3_2;
+    display: flex;
+    align-items: center;
+     
+    
+}
+
+.convert_top_line {
+    width: 15%;
+    margin-left: 40px;
+    
+    div:nth-child(1) {
+    
+        width: 100%;
+        border-bottom: 3px solid #474747;
+        margin-bottom: 20px
+        
+        
+    }
+    div:nth-child(2) {
+        
+        width: 100%;
+        border-bottom: 3px solid #474747;
+        margin-bottom: 20px
+    }
+}
+
+.convert_top_1 {
+    height: 60px;
+    width: 60px;
+    margin: 10px;
+    background: url(../images/arroba.svg) center center / cover no-repeat;
+}
+.convert_top_2 {
+    height: 50px;
+    width: 70px;
+    margin: 10px;
+    background: url(../images/wind.svg) center center / cover no-repeat;
+}
+.convert_top_3 {
+    height: 80px;
+    width: 80px;
+    background: url(../images/stamp.svg) center center / cover no-repeat;
+    margin: 10px;
+    margin-right: 20px;
+
+}
+.convert_center {
+    min-height: 125px;
+    min-width: 400px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background: $color3_2;
+}
+
+.convert_center_conent {
+    padding: 10px 20px;
+}
+.convert_bottom {
+    height: 80px;
+    min-width: 400px;
+    background: #ececec;
+    border-radius: 0 0 40px 40px;
+    position: relative;
+}
+.convert_bottom_line {
+    width: 30%;
+    position: absolute;
+    right: 50px;
+    
+    div:nth-child(1) {
+    
+        width: 100%;
+        border-bottom: 3px solid #474747;
+        margin-bottom: 20px
+        
+        
+    }
+    div:nth-child(2) {
+        
+        width: 100%;
+        border-bottom: 3px solid #474747;
+        margin-bottom: 20px
+    }
+    div:nth-child(3) {
+        
+        width: 80%;
+        border-bottom: 3px solid #474747;
+    }
+}
+
+
+
+
+@media (min-width: 816px) {
+
+    .petergof {
+        order: 2;
+    }
+
+    .neformSpb {
+        order: 2;
+        
+    }
+
+    .SpbOutside {
+        order: 2;
+    }
+}

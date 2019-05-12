@@ -1,0 +1,1073 @@
+@font-face {
+    src: url('../font/Comfortaa-Regular.ttf');
+    font-family: 'Comfortaa';
+}
+
+$color1: rgb(255, 165, 0);
+$color2: rgb(0, 119, 255);
+$color3: rgb(71, 71, 71); // h3 , futer
+$color3_1: rgb(119, 114, 114); // текст,
+$color3_2: rgb(236, 236, 236); // текст,
+$color5: rgb(250, 235, 215);
+$colorBanerH2: rgb(45, 186, 255);
+$colorBanerLine: rgb(255, 165, 0);
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Comfortaa;
+}  
+
+
+.wraper {
+    margin: 0 auto;
+    max-width: 1200px;
+    
+}
+
+@keyframes fonar_blesk {
+    0%{
+
+    }
+    100% {
+        transform: translate(120px);
+    }
+}
+
+@keyframes fonar_light {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/*  ТОР блок с картинкой */
+
+.block_top {
+    min-height: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    overflow: hidden;
+    // background: blue;
+
+    .wraper {
+        position: relative;
+        margin-bottom: 20px;
+        left: 0;
+        right: 0;
+    
+    
+        // h1 {
+        //     color: rgba(255, 255, 255, 0.75);
+        //     font-size: 40px;
+        //     align-items: center;
+        //     margin-top: 100px;
+
+            
+        // }
+    
+        // p {
+        //     color: rgba(255, 255, 255, 0.75);
+        //     font-size: 26px;
+        //     margin-bottom: 30px;
+            
+            
+        // }
+
+    }
+
+}
+
+.header_nav {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10;
+
+
+    .logo {
+        height: 86px;
+        width: 150px;
+        min-width: 70px;
+        background: url(../images/logo_myspb_200x150.png) center center / contain no-repeat;
+        transform: rotate(-15deg);
+    }
+    .nav {
+        padding: 10px;
+    
+        a {
+            color:rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            margin: 0 10px;
+            position: relative;
+    
+            &:not(.logo):before {
+                content: "";
+                position: absolute;
+                height: 3px;
+                width: 0%;
+                left: 50%;
+                bottom: -3px;  
+                background: rgba(223, 251, 74, 0.33);
+            }
+    
+            &:hover:before {
+                width: 100%;
+                left: 0;
+                transition: 0.7s all;
+            }
+        }
+    
+    }
+    
+    // далее код для мини меню
+    .nav_ico {
+        display: none;
+        align-items: center;
+        position: relative;
+        height: 30px;
+        width: 30px;
+        top: -30px;
+        z-index: 1000;
+
+        @media (max-width: 735px) {
+            display: block;
+
+
+            div {
+                width: 30px;
+                position: absolute;
+                border-bottom: 3px solid yellow;
+        
+                &:nth-child(1) {top: 0;}
+                &:nth-child(2) {top: 8px;}
+                &:nth-child(3) {top: 16px;}
+            }
+        }
+    
+    }
+
+} 
+
+// Далее Блок Слайдера в block_top
+
+.slider {
+    position: absolute;
+    min-height: 600px;
+    width: 100%;
+    // border: 2px solid crimson;
+    overflow: hidden;
+}
+
+.slider-lenta {
+    min-height: 600px;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    
+    
+}
+.slider-arrow-left {
+    position: absolute;
+    width: 15%;
+    // background: rgba(245, 209, 3, 0.308);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 5;
+}
+.slider-arrow-left:before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-right: 3px solid rgba(255, 255, 255, 0.623);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.623);
+    transform: rotate(135deg);
+    }
+
+.slider-arrow-right {
+    position: absolute;
+    width: 15%;
+    // background: rgba(245, 209, 3, 0.308);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 5;
+}
+.slider-arrow-right:before {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-right: 3px solid rgba(255, 255, 255, 0.623);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.623);
+    transform: rotate(-45deg);
+}
+
+.slider-lenta_item {
+    width: 100%;
+    min-height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.slider-lenta_item:nth-child(1) {
+    background: url(../images/bridg.jpg) center center / cover no-repeat;
+}
+
+.slider-lenta_item:nth-child(2) {
+    background: url(../images/spit_of_vasilievsky_island_2.jpg) center center / cover no-repeat;
+
+}
+.slider-lenta_item:nth-child(3) {
+    background: url(../images/teplohod.jpg) center center / cover no-repeat;
+}
+.slider-lenta_item:nth-child(4) {
+    background: url(../images/Russia_St._Petersburg.jpg) center center / cover no-repeat;
+}
+
+
+
+.top__head_txt {
+    min-height: inherit;
+    // position: absolute;
+    padding: 20px;
+
+
+    h1 {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 40px;
+        align-items: center;
+        margin-top: 100px;
+        
+    }
+
+    p {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 26px;
+        margin-bottom: 30px;
+        
+    }  
+}
+
+.block_top_button {
+
+    color:black;
+    padding: 10px 50px;
+    background-color: rgba(255, 235, 0, 0.58);
+    border-radius: 15px;
+    border: 1px solid rgb(223, 247, 27);
+    font-size: 18px;
+    text-decoration: none;
+
+}
+
+
+/* далее Блок банера */
+
+.block_baner {
+    padding: 20px;
+    text-align: center;
+
+    h2 {
+        color: $colorBanerH2;
+        
+    }
+    
+    p {
+        
+        font-size: 18px;
+        color: $color3_1;
+        padding-top: 10px;
+    }
+
+    .fonar {
+        width: 66px;
+        height: 60px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background: url(../images/fonar.png) center center /cover no-repeat;
+        position: relative;
+        overflow: hidden;
+
+        /* Анимация для фонаря блеск */
+
+        &:before {
+            animation: fonar_light 3s infinite;
+            content: "";
+            background: url(../images/fonar_light.png) center center / cover no-repeat;
+            position: absolute;
+            height: 60px;
+            width: 66px;
+            left: 0px;
+            
+        }
+
+    }
+
+
+
+    #bonus {
+        // position: relative;
+
+        &:after {
+            animation: fonar_light 1s infinite;
+            content: "";
+            background: url(../images/fonar_light_2.png) center center / cover no-repeat;
+            position: absolute;
+            height: inherit;
+            width: inherit;
+            left: 0px;
+            
+        }
+
+    }
+
+
+    .baner_line {
+        width: 20%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-bottom: 2px solid $colorBanerLine;
+        padding-top: 10px; 
+    }
+}
+
+
+
+
+
+/* Анимация для фонаря перелив */
+/* .fonar:before {
+    animation: fonar_blesk 5s infinite;
+    content: "";
+    background: url(../images/blesk_fonar.png) center center /cover no-repeat;
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    left: -80px;
+} */
+
+
+/* Далее код для всплывающего блока с бонусом   */
+
+.tajny {
+    display: none;
+    height: 400px;
+    background: url(../images/spb_b_w.jpg) center center / cover no-repeat;
+    position: relative;
+
+    .tajny_info {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 10px auto;
+        background: rgba(0, 140, 255, 0.616);
+        border-radius: 10px;
+        padding: 5px;
+        height: 68px;
+        width: 374px;
+        color: $color5;
+        text-align: center;
+    }
+
+    .fraza {
+        position: absolute;
+        width: 320px;
+        top: 94px;
+        text-align: center;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background: rgba(255, 166, 0, 0.459);
+        font-size: 30px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+}
+
+
+
+/* Далее Блок услуги (флекс контейнер) */
+
+.block_uslugi_flex_header {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.block_uslugi_flex {
+    /* border: 2px solid rgb(71, 71, 71); */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    width: 50%;
+    box-sizing: border-box;
+    flex-basis: 450px;
+    flex-grow: 1;
+
+    h3 {
+        color: $color3;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    p {
+        color: $color3_1;
+    }
+
+}
+
+.block_uslugi_txt {
+    // width: 80%;
+    min-width: 400px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    flex-basis: 400px;
+    flex-grow: 1;
+
+
+}
+
+.block_uslugi_marsh {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    box-sizing: border-box;
+    background: url(../images/map_4.png) center center / cover no-repeat ;
+}
+
+.block_uslugi_exkur {
+    
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    box-sizing: border-box;
+    background: url(../images/kryshi_2a.jpg) center center / cover no-repeat ;
+
+
+}
+.block_uslugi_znakom {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    box-sizing: border-box;
+    background: url(../images/znakomstva.jpg) center center / cover no-repeat;
+}
+
+.block_uslugi_suvenir {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    box-sizing: border-box;
+    background: url(../images/magnit__sankt-peterburg.jpg) center center / cover no-repeat;
+}
+.block_uslugi_foto {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    box-sizing: border-box;
+    background: url(../images/photographer2.jpg) center center / cover no-repeat ;
+}
+.block_uslugi_vpechat {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    box-sizing: border-box;
+    background: url(../images/hepypeople_3.jpg) center center / cover no-repeat ;
+}
+
+/* блок о нас flex контейнер */
+
+.block_onas {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+
+    .block_onas_flex_1 {
+        min-width: 50%;
+        box-sizing: border-box;
+        min-height: 650px;
+        background: url(../images/happy-people.jpg) center center / cover no-repeat;
+        flex-basis: 350px ;
+        flex-grow: 1;
+    }
+
+    .block_onas_flex_2 {
+        min-width: 50%;
+        box-sizing: border-box;
+        background-color: $color1;
+        padding: 50px;
+        position: relative;
+        flex-basis: 350px ;
+        flex-grow: 1;
+    
+        h3 {
+            font-size: 18px;
+            color: antiquewhite;
+            padding-bottom: 30px;
+            box-sizing: border-box;
+        }
+        p {
+            color: antiquewhite;
+            padding-bottom: 30px;
+            box-sizing: border-box;
+            line-height: 1.5;  
+        }
+
+        .block_onas_button {
+            width: 200px;
+            font-size: 18px;
+            text-decoration: none;
+            color: antiquewhite;
+            padding: 10px 20px;
+            margin-top: 30px;
+            background-color: rgb(234, 160, 131);
+            border: 1px solid rgb(223, 247, 27);
+            border-radius: 5px;
+            
+        }
+    }
+}
+
+
+/* .podlozka {
+    
+    background: url(../images/spb_gravur.jpg) center center / cover no-repeat;
+    height: 100%;
+    width: 100%;
+    filter: opacity(0.03);
+} */
+
+
+/* Блок с фотографиями Flex контейнер */
+
+.block_foto_header {
+    display: flex;
+    flex-wrap: wrap;
+
+    .block_foto {
+        height: 300px;
+        min-width: 25%;
+        box-sizing: border-box;
+        flex-basis: 180px;
+        flex-grow: 1;
+
+        @media (max-width: 740px) {
+            flex-basis: 300px;
+        }
+
+        &:nth-child(1) {
+            background: url(../images/isaakievskiy_sobor_2.jpg) center center / cover no-repeat;
+        }
+        &:nth-child(2) {
+            background: url(../images/Russia_St._Petersburg.jpg) center center / cover no-repeat;
+        }
+        &:nth-child(3) {
+            background: url(../images/spb_spas_na_krovi.jpg) center center / cover no-repeat;
+        }
+        &:nth-child(4) {
+            background: url(../images/spb_usupovskiy.jpg) center center / cover no-repeat;
+        }
+        &:nth-child(5) {
+            background: url(../images/spb_water.jpg) center center / cover no-repeat;
+        }
+        &:nth-child(6) {
+            background: url(../images/Petergof-1.jpg) center center / cover no-repeat;
+        }
+        &:nth-child(7) {
+            background: url(../images/spb_kazanskiy_sobor_night.jpg) center center / cover no-repeat;
+        }
+        &:nth-child(8) {
+            background: url(../images/spit_of_vasilievsky_island.jpg) center center / cover no-repeat;
+        }
+
+    }
+}
+
+ /* Блок с отзывами Flex контейнер */
+
+.block_otzyv_header {
+    display: flex;
+    flex-wrap: wrap;
+    p {
+        background: $color3_2;
+        border-radius: 5px;
+        padding: 15px;
+    }
+}
+
+.block_otzyv {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 15px 25px;
+    flex-basis: 450px;
+    flex-grow: 1;
+        
+}
+
+
+.block_otzyv_l_foto {
+    height: 60px;
+    width: 50px;
+    border-radius: 0 13px 0 15px;
+    display: inline-block;
+    margin: 5px;
+    background: url(../images/gi.jpg)  center center / cover no-repeat;
+}
+.block_otzyv_r_foto {
+    height: 60px;
+    width: 50px;
+    border-radius: 0 13px 0 15px;
+    display: inline-block;
+    margin: 5px;
+    background: url(../images/km.jpeg)  center center / cover no-repeat;
+}
+ 
+
+/* Код переходов между блоками */
+
+.spb_fon {
+    background: url(../images/spb_org.png)  center center / contain;
+    height: 45px;
+    width: 100%;
+    filter: opacity(0.5);
+}
+
+/* .spb_fon_bridge {
+    background: url(../images/spb_original_bridge.png)  center center / contain;
+    height: 45px;
+    width: 100%;
+    filter: opacity(0.5);
+} */
+
+/* блок банер 2 */
+
+.bacground_block_baner_2 {
+    background: $color3_2; 
+}
+
+.block_baner_2 {
+    padding: 30px;
+    text-align: center;
+    background: $color3_2;
+
+    .fonar {
+        width: 66px;
+        height: 60px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background: url(../images/fonar.png) center center /cover no-repeat;
+        position: relative;
+        overflow: hidden;
+
+        &:before {
+            animation: fonar_light 3s infinite;
+            content: "";
+            background: url(../images/fonar_light.png) center center / cover no-repeat;
+            position: absolute;
+            height: 60px;
+            width: 66px;
+            left: 0px;
+            
+        }
+    }
+
+    h2 {
+        color:rgb(45, 186, 255);
+    }
+
+    p {
+        font-size: 18px;
+        margin-top: 15px;
+        color: $color3_1
+    }
+
+    .baner_2_line {
+        width: 20%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-bottom: 2px solid orange;
+        padding-top: 10px;
+    }
+}
+
+
+/* Блок формы напишите нам */
+
+.block_question {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10px 20px;
+
+}
+
+.block_question_cont {
+    min-width: 50%;
+    padding: 0 50px 0 50px;
+    box-sizing: border-box;
+    flex-basis: 450px;
+    flex-grow: 1;
+
+}
+
+[type="text"], [type="number"], [type="email"], [type="submit"], textarea {
+    border: 2px solid orange;
+    padding: 7px 5px;
+    width: 100%;
+    margin-top: 10px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+[name="text"] {
+    height: 118px;
+}
+
+
+
+/* далее Футер  */
+
+.bacground_futer_header {
+    background: $color3;
+}
+
+.futer_header {
+    background: $color3;
+    display: flex;
+    flex-wrap: wrap;    
+}
+
+
+
+.futer__flex-left {
+    min-width: 300px;
+    width: 33%;
+    padding: 20px 25px;
+    box-sizing: border-box;
+    flex-basis: 350px;
+    flex-grow: 1;
+
+    .futer_logo {
+        display: block;
+        height: 70px;
+        width: 120px;
+        background: url(../images/logo_myspb_200x150.png) center center / cover no-repeat;
+    }
+
+    h3 {
+        color: $color5;
+        text-align: center;
+    }
+    
+    p {
+        color: $color3_2;
+        padding-top: 10px;
+        font-size: 14px;
+        position: relative;
+    }
+    
+    a {
+        color: rgb(10, 214, 241);
+        font-size: 14px;
+    }
+}
+
+
+
+.futer__flex-center { 
+    min-width: 300px;
+    width: 33%;
+    // padding: 20px 25px 20px 100px;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-basis: 350px;
+    flex-grow: 1;
+    
+
+    h3 {
+        color: $color5;
+        // text-align: center;
+    }
+    
+    p:nth-child(2) {
+        color: $color3_2;
+        padding-top: 10px;
+        font-size: 14px;
+        position: relative;
+        margin-left: 25px;
+
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: -30px;
+            height: 25px;
+            width: 25px;
+            background: url(../images/location.ico) center center / cover no-repeat;
+        }
+
+    }
+
+    p:nth-child(3) {
+        color: $color3_2;
+        padding-top: 10px;
+        font-size: 14px;
+        position: relative;
+        margin-left: 25px;
+
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: -30px;
+            height: 25px;
+            width: 25px;
+            background: url(../images/mail.ico) center center / cover no-repeat;
+        }
+
+    }
+
+    p:nth-child(4) {
+        color: $color3_2;
+        padding-top: 10px;
+        font-size: 14px;
+        position: relative;
+        margin-left: 25px;
+
+
+        &:after {
+            content: "";
+            position: absolute;
+            top: 5px;
+            left: -30px;
+            height: 25px;
+            width: 25px;
+            background: url(../images/Phone_.ico) center center / cover no-repeat;
+        }
+
+    }
+    
+    
+
+}
+
+
+.futer__flex-right {
+    min-width: 300px;
+    width: 33%;
+    padding: 20px 25px;
+    box-sizing: border-box;
+    flex-basis: 350px;
+    flex-grow: 1;
+
+    h3 {
+        color: $color5;
+        // text-align: center;
+    }
+    
+    p {
+        color: $color3_2;
+        padding-top: 10px;
+        font-size: 14px;
+        
+    }
+    
+    a {
+        color: rgb(10, 214, 241);
+        font-size: 14px;
+    }
+     
+
+}
+
+/* далее дно Футера  */
+
+.futer_bottom_bacground {
+    background: black;
+}
+
+.futer_bottom {
+    background: black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    font-size: 12px;
+
+    p {
+        color: $color3_2;
+        flex-basis: 350px;
+        flex-grow: 1;
+        padding: 5px;
+    }
+
+    .social {
+        padding: 5px;
+        flex-basis: 350px;
+        flex-grow: 1;
+        a {
+            padding: 13px;
+            margin: 0 3px;
+    
+            &:nth-child(1) {
+                background: url(../images/vk_logo_200px.png) center center / contain no-repeat;
+            }
+            &:nth-child(2) {
+                background: url(../images/instagram_logo_200px.png) center center / contain no-repeat;
+            }
+            &:nth-child(3) {
+                background: url(../images/facebook_logo_200px.png) center center / contain no-repeat;
+            }
+        }
+    }
+}
+
+
+
+
+
+.scrol_up {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: url(../images/up.svg) center center /cover no-repeat;
+    filter: opacity(0.5);
+}
+
+// стили таблицы поиска
+
+.search_tab {
+
+    min-width: 400px;
+    min-height: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    
+}
+.search_tab_form {
+    width: 20%;
+    
+    // min-height: 20px;
+    border: 1px solid coral;
+    box-sizing: border-box;
+}
+
+.search_tab_form p {
+    padding: 10px;
+    text-align: center;
+}
+
+
+
+
+
+/* далее медизапрос для адаптивного меню */
+
+@media (max-width: 735px) {
+    .nav {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        background: rgba(36, 178, 255, 0.548);
+        width: 100%;
+        top: 0;
+        left: 100%;
+        transition: 1s all;
+    }
+
+    .nav a {
+        padding: 10px;
+        font-size: 22px;
+    }
+
+    .scrol_up {
+        height: 35px;
+        width: 35px;
+        right: 10px;
+    }
+    .slider-arrow-left:before {
+        width: 30px;
+        height: 30px;
+        left: 5px;
+    }
+    .slider-arrow-right:before {
+        width: 30px;
+        height: 30px;
+        left: 5px;
+    }
+
+    
+
+}
+
+@media (max-width: 1070px) {
+    .futer__flex-left {
+        min-width: 100%;
+
+    }
+    .futer__flex-right {
+        min-width: 100%;
+
+    }
+ 
+    .futer__flex-center {
+        min-width: 100%;
+        left: 0;
+        padding: 10px 20px;
+    }
+    
+}
